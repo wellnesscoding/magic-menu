@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Edu SA Beginner', cursive;
+}
+
+:root {
+  --clr: #F0EFEB;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--clr);
+}
+
+.container {
+  position: relative;
+  background-color: #B7B7A4;
+  width: 200px;
+  height: 70px;
+  margin: 10px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.1), -8px -8px 16px rgba(255, 255, 255, 0.8);
+}
+
+.container ul {
+  display: flex;
+  width: 350px;
+}
+
+.container ul li {
+  position: relative;
+  list-style: none;
+  width: 70px;
+  height: 70px;
+  z-index: 1;
+}
+
+.container ul li a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+}
+
+.container ul li a .icon {
+  position: relative;
+  display: block;
+  line-height: 75px;
+  font-size: 1.5em;
+  text-align: center;
+  transition: 0.5s;
+  color: var(--clr);
+}
+
+.container ul li a .icon img {
+  width: 50px;
+  height: 50px;  
+  transform: translateY(5px);
+}
+
+.container ul li.active a .icon {
+  transform: translateY(-32px);
+}
+
+.container ul li a .text {
+  position: absolute;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.container ul li.active a .text {
+  opacity: 1;
+  transform: translateY(10px);
+  color: #2F2E41;
+  font-size: 20px;
+}
+
+.indicator {
+  position: absolute;
+  top: -50%;
+  width: 70px;
+  height: 70px;
+  background: #B7B7A4;
+  border-radius: 50%;
+  border: 6px solid var(--clr);
+  transition: 0.5s;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(255, 255, 255, 0.8);
+}
+
+.container ul li:nth-child(1).active ~ .indicator {
+  transform: translateX(calc(70px * 0));
+}
+
+.container ul li:nth-child(2).active ~ .indicator {
+  transform: translateX(calc(70px * 1));
+}
+
+.container ul li:nth-child(3).active ~ .indicator {
+  transform: translateX(calc(70px * 2));
+}
+
